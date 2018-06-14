@@ -4,11 +4,13 @@ import { NgxsModule } from '@ngxs/store';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { SideBarState } from './store/side-bar/side-bar.state';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { SideBarItemComponent } from './components/side-bar-item/side-bar-item.component';
 
 
 @NgModule({
   declarations: [
-    SideBarComponent
+    SideBarComponent,
+    SideBarItemComponent
   ],
   imports: [
     BrowserModule,

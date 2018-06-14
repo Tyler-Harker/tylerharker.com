@@ -1,0 +1,22 @@
+@import '../../../assets/colors.scss';
+:host{
+	display: block;
+	background-color: $primary-darkest;
+	height: 60px;
+	position: relative;
+
+	i{
+		position: absolute;
+		right: 11px;
+		top: 13px;
+		font-size: 22px;
+		padding: 6px;
+		cursor: pointer;
+		transition: color .2s;
+		color: white;
+
+		&:hover{
+			color: $secondary;
+		}
+	}
+}

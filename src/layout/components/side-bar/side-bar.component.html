@@ -1,9 +1,12 @@
-<section class="top">
+<div class="top" [ngClass]="{'closed': !(state | async)?.isOpen}">
 	top
-	<i class="far fa-bars"></i>
-</section>
+	<i *ngIf="!(state | async)?.isOpen" class="far fa-bars" (click)="open()"></i>
+	<i *ngIf="(state | async)?.isOpen" class="fal fa-times" (click)="close()"></i>
+</div>
 
 
-<section class="bottom">
-	bottom
-</section>
+<div class="bottom" [ngClass]="{'closed': !(state | async)?.isOpen}">
+	<th-side-bar-item></th-side-bar-item>
+	<th-side-bar-item></th-side-bar-item>
+	<th-side-bar-item></th-side-bar-item>
+</div>
