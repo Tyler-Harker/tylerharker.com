@@ -1,9 +1,10 @@
 @import '../../../assets/colors.scss';
 :host{
 	display: block;
-	background-color: $primary-darkest;
+	background-color: $primary-darker;
 	height: 60px;
 	position: relative;
+	border-bottom: 1px solid $primary-darkest;
 
 	i{
 		position: absolute;
