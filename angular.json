@@ -27,6 +27,7 @@
               "src/assets"
             ],
             "styles": [
+              "vendor/fontawesome-pro-5.0.13/web-fonts-with-css/scss/fontawesome.scss",
               "src/styles.scss"
             ],
             "scripts": []
