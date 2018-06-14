@@ -1,4 +1,49 @@
 :host{
+	$closedWidth: 50px;
+	$width: 250px;
+	$topHeight: 60px;
+	$bottomHeight: calc(100% - #{$topHeight});
+
+
 	display: block;
 	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	background-color: green;
+
+
+	i{
+		position: absolute;
+		right: 11px;
+		top: 13px;
+		font-size: 22px;
+		padding: 6px;
+		cursor: pointer;
+	}
+
+	.top, .bottom{
+		width: $width;
+		margin-left: 0px;
+		border-bottom: 1px solid black;
+		background-color: purple;
+		transition: margin-left .2s;
+		position: relative;
+	}
+
+	.top{
+		height: $topHeight;
+	}
+	.bottom{
+		height: $bottomHeight;
+	}
+
+	.closed{
+		&.top{
+			margin-left: calc(-#{$width} + #{$closedWidth});
+		}
+		&.bottom{
+			margin-left: calc(-#{$width});
+		}
+	}
 }
