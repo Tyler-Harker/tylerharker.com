@@ -13,6 +13,8 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { LayoutModule } from '../layout/layout.module';
 
+import * as sideBarActions from '../layout/store/side-bar/side-bar.actions';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,11 @@ import { LayoutModule } from '../layout/layout.module';
     NgxsModule.forRoot([]),
     NgxsLoggerPluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsStoragePluginModule.forRoot(),
+    NgxsStoragePluginModule.forRoot({
+      key: [
+        sideBarActions.NAME
+      ]
+    }),
     NgxsFormPluginModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
   ],
