@@ -14,11 +14,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { LayoutModule } from '../layout/layout.module';
 
 import * as sideBarActions from '../layout/store/side-bar/side-bar.actions';
+import { ProjectsComponent } from './pages/projects/projects.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,22 @@
-import { State, Action, StateContext } from '@ngxs/store';
+import { State, Action, StateContext, NgxsOnInit } from '@ngxs/store';
 import { ISideBarModel } from './side-bar.model';
 import * as sideBarActions from './side-bar.actions';
+import { SideBarService } from '../../services/side-bar.service';
 ​
 @State<ISideBarModel>({
   name: sideBarActions.NAME,
   defaults: <ISideBarModel>{
-	  isOpen: true
+	  isOpen: true,
+	  routes: []
   }
 })
-export class SideBarState {
+export class SideBarState{
+
+	constructor(
+		private sideBarService: SideBarService,
+	){
+	}
+
 	@Action(sideBarActions.Open)
 	open(ctx: StateContext<ISideBarModel>) {
 		ctx.patchState({
@@ -20,6 +28,14 @@ export class SideBarState {
 	close(ctx: StateContext<ISideBarModel>){
 		ctx.patchState({
 			isOpen: false
+		})
+	}
+
+	@Action(sideBarActions.GetRoutes)
+	getRoutes(ctx: StateContext<ISideBarModel>){
+		let routes = this.sideBarService.initializeRoutes();
+		ctx.patchState({
+			routes: routes
 		})
 	}
 }

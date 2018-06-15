@@ -7,6 +7,7 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { SideBarItemComponent } from './components/side-bar-item/side-bar-item.component';
 import { SideBarAwareContainerComponent } from './components/side-bar-aware-container/side-bar-aware-container.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { SideBarService } from './services/side-bar.service';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     SideBarAwareContainerComponent,
     NavBarComponent
   ],
-  providers: [],
+  providers: [SideBarService],
   bootstrap: []
 })
 export class LayoutModule { }

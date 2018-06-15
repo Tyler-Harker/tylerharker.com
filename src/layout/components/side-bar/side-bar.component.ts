@@ -5,6 +5,7 @@ import { ISideBarModel } from '../../store/side-bar/side-bar.model';
 import { SideBarState } from '../../store/side-bar/side-bar.state';
 
 import * as sideBarActions from '../../store/side-bar/side-bar.actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'th-side-bar',
@@ -15,8 +16,12 @@ export class SideBarComponent {
 	@Select(SideBarState) public state: Observable<ISideBarModel>;
 
 	constructor(
-		private store: Store
-	){}
+		private store: Store,
+		private router: Router
+	){
+		this.store.dispatch(new sideBarActions.GetRoutes())
+	}
+
 
 	open(){
 		this.store.dispatch(new sideBarActions.Open());
