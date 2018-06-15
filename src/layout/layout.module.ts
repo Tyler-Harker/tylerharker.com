@@ -6,13 +6,15 @@ import { SideBarState } from './store/side-bar/side-bar.state';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { SideBarItemComponent } from './components/side-bar-item/side-bar-item.component';
 import { SideBarAwareContainerComponent } from './components/side-bar-aware-container/side-bar-aware-container.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 
 @NgModule({
   declarations: [
     SideBarComponent,
     SideBarItemComponent,
-    SideBarAwareContainerComponent
+    SideBarAwareContainerComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import { SideBarAwareContainerComponent } from './components/side-bar-aware-cont
   ],
   exports: [
     SideBarComponent,
-    SideBarAwareContainerComponent
+    SideBarAwareContainerComponent,
+    NavBarComponent
   ],
   providers: [],
   bootstrap: []
