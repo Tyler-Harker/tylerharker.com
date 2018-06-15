@@ -27,7 +27,9 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
               "vendor/fontawesome-pro-5.0.13/web-fonts-with-css/css/fontawesome-all.css",
+              "src/assets/colors.scss",
               "src/styles.scss"
             ],
             "scripts": []

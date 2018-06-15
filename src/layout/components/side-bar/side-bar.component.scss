@@ -1,10 +1,11 @@
 @import '../../../assets/colors.scss';
-:host{
-	$closedWidth: 50px;
-	$width: 250px;
-	$topHeight: 60px;
-	$bottomHeight: calc(100% - #{$topHeight});
+$topClosedWidth: 50px;
+$closedWidth: 0px;
+$width: 250px;
+$topHeight: 60px;
+$bottomHeight: calc(100% - #{$topHeight});
 
+:host{
 	i{
 		position: absolute;
 		right: 11px;
@@ -16,11 +17,11 @@
 	}
 
 	.top, .bottom{
+		z-index: 9999;
 		position: fixed;
 		top: 0px;
 		left: 0px;
 		width: $width;
-		margin-left: 0px;
 		transition: margin-left .2s;
 		border-right: 1px solid grey;
 
@@ -36,6 +37,7 @@
 		height: $topHeight;
 		background-color: white;
 	}
+	
 	.bottom{
 		margin-top: $topHeight;
 		height: $bottomHeight;
@@ -44,10 +46,23 @@
 
 	.closed{
 		&.top{
-			margin-left: calc(-#{$width} + #{$closedWidth});
+			margin-left: calc(-#{$width} + #{$topClosedWidth});
 		}
 		&.bottom{
-			margin-left: calc(-#{$width});
+			margin-left: calc(-#{$width} + #{$closedWidth});
 		}
 	}
+
+	// Small devices (landscape phones, 576px and up)
+	@media (min-width: 576px) { 
+		.closed{
+			&.top{
+				margin-left: calc(-#{$width} + #{$topClosedWidth});
+			}
+			&.bottom{
+				margin-left: calc(-#{$width} + #{$topClosedWidth});
+			}
+		}
+	 }
+
 }

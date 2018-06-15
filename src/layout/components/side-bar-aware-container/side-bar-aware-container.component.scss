@@ -1,0 +1,26 @@
+:host{
+	display: block;
+	position: relative;
+
+	.wrapper{
+		background-color: green;
+		margin-left: 0px;
+		transition: margin-left .2s;
+
+		&.open{
+			margin-left: 0px;
+		}
+	}
+
+	// Small devices (landscape phones, 576px and up)
+	@media (min-width: 576px) {
+		.wrapper{
+			margin-left: 50px;
+			&.open{
+				margin-left: 250px;
+			}
+		}
+	}
+}
+
+
