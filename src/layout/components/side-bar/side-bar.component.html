@@ -6,5 +6,5 @@
 
 
 <div class="bottom" [ngClass]="{'closed': !(state | async)?.isOpen}">
-	<th-side-bar-item *ngFor="let route of (state | async)?.routes" [label]="route.data.sideBarLabel" [iconClass]="route.data.sideBarIconClass"></th-side-bar-item>
+	<th-side-bar-item *ngFor="let route of (state | async)?.routes" [routerLink]="'/'+route.path" [label]="route.data.sideBarLabel" [iconClass]="route.data.sideBarIconClass"></th-side-bar-item>
 </div>

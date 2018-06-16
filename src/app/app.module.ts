@@ -15,10 +15,12 @@ import { LayoutModule } from '../layout/layout.module';
 
 import * as sideBarActions from '../layout/store/side-bar/side-bar.actions';
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { LayoutComponent } from './pages/layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LayoutComponent,
     HomeComponent,
     ProjectsComponent
   ],

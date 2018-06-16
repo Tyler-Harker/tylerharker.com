@@ -1,10 +1,10 @@
 :host{
 	display: block;
 	position: relative;
+	overflow: hidden;
 	margin-top: 72px;
 
 	.wrapper{
-		background-color: green;
 		margin-left: 0px;
 		transition: margin-left .2s;
 

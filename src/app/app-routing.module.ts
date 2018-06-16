@@ -5,10 +5,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { AppComponent } from './app.component';
 import { AppRoutingDataModel } from './app-routing-data.model';
+import { LayoutComponent } from './pages/layout/layout.component';
 
 const routes: Route[] = [
   {
-    path: '', component: AppComponent,
+    path: '', component: LayoutComponent,
     children: [
       {
         path: '',
@@ -16,7 +17,7 @@ const routes: Route[] = [
         data: <AppRoutingDataModel>{
           showInSideBar: true,
           sideBarLabel: 'Home',
-          sideBarIconClass: 'fal fa-times'
+          sideBarIconClass: 'fal fa-home'
         }
       },
       {
@@ -25,7 +26,7 @@ const routes: Route[] = [
         data: <AppRoutingDataModel>{
           showInSideBar: true,
           sideBarLabel: 'Projects',
-          sideBarIconClass: 'fal fa-home'
+          sideBarIconClass: 'fal fa-toolbox'
         }
       }
     ]

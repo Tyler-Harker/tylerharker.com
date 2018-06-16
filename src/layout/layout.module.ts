@@ -8,6 +8,9 @@ import { SideBarItemComponent } from './components/side-bar-item/side-bar-item.c
 import { SideBarAwareContainerComponent } from './components/side-bar-aware-container/side-bar-aware-container.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SideBarService } from './services/side-bar.service';
+import { RouterModule } from '@angular/router';
+import { PanelComponent } from './components/panel/panel.component';
+import { PanelContainerComponent } from './components/panel-container/panel-container.component';
 
 
 @NgModule({
@@ -15,10 +18,13 @@ import { SideBarService } from './services/side-bar.service';
     SideBarComponent,
     SideBarItemComponent,
     SideBarAwareContainerComponent,
-    NavBarComponent
+    NavBarComponent,
+    PanelComponent,
+    PanelContainerComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     NgxsModule.forFeature([
       SideBarState
     ]),
@@ -26,7 +32,9 @@ import { SideBarService } from './services/side-bar.service';
   exports: [
     SideBarComponent,
     SideBarAwareContainerComponent,
-    NavBarComponent
+    NavBarComponent,
+    PanelComponent,
+    PanelContainerComponent
   ],
   providers: [SideBarService],
   bootstrap: []
