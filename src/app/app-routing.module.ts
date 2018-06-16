@@ -39,7 +39,7 @@ const routes: Route[] = [
           sideBarLabel: 'Work Experience',
           sideBarIconClass: 'fal fa-toolbox'
         }
-      }
+      },
       {
         path: 'blog',
         component: BlogComponent,

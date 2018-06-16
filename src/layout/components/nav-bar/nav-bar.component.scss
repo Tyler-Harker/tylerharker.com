@@ -1,12 +1,36 @@
 @import '../../../assets/colors.scss';
 :host{
-	display: block;
+	display: flex;
 	height: 60px;
 	top: 0px;
 	left: 0px;
 	width: 100%;
 	position: fixed;
-	background-color: orange;
+	background-color: white;
 	box-shadow: 2px 0px 3px $grey-darker;
 	z-index: 999;
+	padding-right: 16px;
+
+	justify-content: flex-end;
+	align-items: center;
+
+
+	.profilePicWrapper{
+		border-radius: 4px;
+		width: 50px;
+		overflow: hidden;
+		.profilePic{
+			height: 50px;
+		}
+	}
+	
+
+	.info{
+		margin-left: 16px;
+		color: $primary-lighter;
+		&:hover{
+			cursor: pointer;
+			text-decoration: underline;
+		}
+	}
 }

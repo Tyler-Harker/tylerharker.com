@@ -1,10 +1,18 @@
 @import '../../../assets/colors.scss';
 :host{
-	display: block;
+	display: flex;
+	align-items: center;
 	background-color: $primary-darker;
 	height: 60px;
 	position: relative;
 	border-bottom: 2px solid $primary-darkest;
+	color: white;
+	transition: color .2s;
+	cursor: pointer;
+
+	&:hover{
+		color: $secondary;
+	}
 
 	i{
 		position: absolute;
@@ -13,11 +21,9 @@
 		font-size: 22px;
 		padding: 6px;
 		cursor: pointer;
-		transition: color .2s;
-		color: white;
+	}
 
-		&:hover{
-			color: $secondary;
-		}
+	.text{
+		margin-left: 16px;
 	}
 }
