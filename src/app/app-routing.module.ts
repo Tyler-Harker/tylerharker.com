@@ -6,6 +6,8 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { AppComponent } from './app.component';
 import { AppRoutingDataModel } from './app-routing-data.model';
 import { LayoutComponent } from './pages/layout/layout.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { WorkExperienceComponent } from './pages/work-experience/work-experience.component';
 
 const routes: Route[] = [
   {
@@ -26,9 +28,28 @@ const routes: Route[] = [
         data: <AppRoutingDataModel>{
           showInSideBar: true,
           sideBarLabel: 'Projects',
+          sideBarIconClass: 'fal fa-flask'
+        }
+      },
+      {
+        path: 'work-experience',
+        component: WorkExperienceComponent,
+        data: <AppRoutingDataModel>{
+          showInSideBar: true,
+          sideBarLabel: 'Work Experience',
           sideBarIconClass: 'fal fa-toolbox'
         }
       }
+      {
+        path: 'blog',
+        component: BlogComponent,
+        data: <AppRoutingDataModel>{
+          showInSideBar: true,
+          sideBarLabel: 'Blog',
+          sideBarIconClass: 'fal fa-comment'
+        }
+      }
+      
     ]
   }
 ]

@@ -2,7 +2,6 @@
 :host{
 	display: block;
 	position: relative;
-	height: 80px;
 	background-color: white;
 	border-radius: 3px;
 	box-shadow: 2px 2px 3px $grey-light;
@@ -22,5 +21,9 @@
 			align-self: center;
 			font-size: 18px;
 		}
+	}
+	.body{
+		min-height: 30px;
+		padding: 16px;
 	}
 }

@@ -16,13 +16,17 @@ import { LayoutModule } from '../layout/layout.module';
 import * as sideBarActions from '../layout/store/side-bar/side-bar.actions';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { LayoutComponent } from './pages/layout/layout.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { WorkExperienceComponent } from './pages/work-experience/work-experience.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     HomeComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    BlogComponent,
+    WorkExperienceComponent
   ],
   imports: [
     BrowserModule,

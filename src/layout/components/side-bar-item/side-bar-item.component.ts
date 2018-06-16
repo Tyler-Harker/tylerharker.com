@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./side-bar-item.component.scss']
 })
 export class SideBarItemComponent {
-  @Input() public label: string = 'test'
-	@Input() public iconClass: string = 'fal fa-bars'
+  @Input() public label: string = 'test';
+  @Input() public iconClass: string = 'fal fa-bars';
+  @Input() public isSideBarOpen: boolean;
 }
