@@ -8,6 +8,7 @@ import { AppRoutingDataModel } from './app-routing-data.model';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { WorkExperienceComponent } from './pages/work-experience/work-experience.component';
+import { CodeComponent } from './pages/code/code.component';
 
 const routes: Route[] = [
   {
@@ -29,6 +30,15 @@ const routes: Route[] = [
           showInSideBar: true,
           sideBarLabel: 'Projects',
           sideBarIconClass: 'fal fa-flask'
+        }
+      },
+      {
+        path: 'code',
+        component: CodeComponent,
+        data: <AppRoutingDataModel>{
+          showInSideBar: true,
+          sideBarLabel: 'Code Samples',
+          sideBarIconClass: 'fal fa-file-code'
         }
       },
       {

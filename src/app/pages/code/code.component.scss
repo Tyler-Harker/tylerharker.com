@@ -1,0 +1,28 @@
+:host{
+	display: flex;
+	position: relative;
+	overflow: hidden;
+
+	.codeArea{
+		margin: 0px;
+		margin-top: 16px;
+		border: 1px solid orange;
+		.options{
+			div{
+				height: 60px;
+				opacity: .5;
+				&:nth-of-type(2n){
+					background-color: green;
+				}
+				&:hover{
+					opacity: 1;
+					cursor: pointer;
+				}
+			}
+		}
+		.code{
+			height: 300px;
+			background-color: black;
+		}
+	}
+}

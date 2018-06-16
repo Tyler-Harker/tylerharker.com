@@ -18,6 +18,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { WorkExperienceComponent } from './pages/work-experience/work-experience.component';
+import { CodeComponent } from './pages/code/code.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { WorkExperienceComponent } from './pages/work-experience/work-experience
     HomeComponent,
     ProjectsComponent,
     BlogComponent,
-    WorkExperienceComponent
+    WorkExperienceComponent,
+    CodeComponent
   ],
   imports: [
     BrowserModule,
