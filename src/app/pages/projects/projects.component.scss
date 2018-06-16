@@ -1,0 +1,17 @@
+@import '../../../assets/colors.scss';
+
+:host{
+	display: flex;
+	position: relative;
+	overflow: hidden;
+	flex-wrap: wrap;
+
+	h3{
+		margin-top: 16px;
+	}
+
+	hr{
+		margin-bottom: 25px;
+	}
+	
+}

@@ -11,6 +11,7 @@ import { SideBarService } from './services/side-bar.service';
 import { RouterModule } from '@angular/router';
 import { PanelComponent } from './components/panel/panel.component';
 import { PanelContainerComponent } from './components/panel-container/panel-container.component';
+import { ImagePanelComponent } from './components/image-panel/image-panel.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { PanelContainerComponent } from './components/panel-container/panel-cont
     SideBarAwareContainerComponent,
     NavBarComponent,
     PanelComponent,
-    PanelContainerComponent
+    PanelContainerComponent,
+    ImagePanelComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { PanelContainerComponent } from './components/panel-container/panel-cont
     SideBarAwareContainerComponent,
     NavBarComponent,
     PanelComponent,
-    PanelContainerComponent
+    PanelContainerComponent,
+    ImagePanelComponent
   ],
   providers: [SideBarService],
   bootstrap: []
