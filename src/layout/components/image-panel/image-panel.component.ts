@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 
@@ -9,4 +9,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./image-panel.component.scss']
 })
 export class ImagePanelComponent {
+  private _src = "/assets/rfg.jpeg";
+  @Input()
+  set src(src: string){
+    this._src = src;
+  }
+
+  get src(){
+    return `url("${this._src}")`;
+  }
 }

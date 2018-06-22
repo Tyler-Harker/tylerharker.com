@@ -10,7 +10,7 @@ import { NgxsFormPluginModule } from '@ngxs/form-plugin';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './/app-routing.module';
-import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
 import { LayoutModule } from '../layout/layout.module';
 
 import * as sideBarActions from '../layout/store/side-bar/side-bar.actions';
@@ -19,16 +19,18 @@ import { LayoutComponent } from './pages/layout/layout.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { WorkExperienceComponent } from './pages/work-experience/work-experience.component';
 import { CodeComponent } from './pages/code/code.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    HomeComponent,
+    AboutComponent,
     ProjectsComponent,
     BlogComponent,
     WorkExperienceComponent,
-    CodeComponent
+    CodeComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

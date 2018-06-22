@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'th-code',
+  selector: 'app-th-code',
   templateUrl: './code.component.html',
   styleUrls: ['./code.component.scss']
 })
