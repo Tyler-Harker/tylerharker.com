@@ -155,26 +155,24 @@ public class UserService
 
     public async Task<IUserGrain?> FindByEmail(string email)
     {
-        var result = await _client
-            .SearchGrains<IUserGrain, UserState>()
+        return await _client
+            .Search<IUserGrain>()
             .Where(u => u.Email == email)
             .FirstOrDefaultAsync();
-
-        return result;
     }
 
     public async Task<List<IUserGrain>> GetActiveUsers()
     {
         return await _client
-            .SearchGrains<IUserGrain, UserState>()
-            .Where(u => u.IsActive == true)
+            .Search<IUserGrain>()
+            .Where(u => u.IsActive)
             .ToListAsync();
     }
 
     public async Task<int> CountRecentSignups(DateTime since)
     {
         return await _client
-            .SearchGrains<IUserGrain, UserState>()
+            .Search<IUserGrain>()
             .Where(u => u.CreatedAt >= since)
             .CountAsync();
     }
