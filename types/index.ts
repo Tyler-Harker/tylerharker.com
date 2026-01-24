@@ -12,6 +12,7 @@ export interface Project {
   features: string[];
   githubUrl: string;
   demoUrl?: string;
+  docsUrl?: string;
   blogLinks?: BlogLink[];
   nugetUrl?: string;
   image?: string;

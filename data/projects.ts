@@ -23,6 +23,7 @@ export const projects: Project[] = [
     ],
     githubUrl: 'https://github.com/Tyler-Harker/TGHarker.Orleans.Search',
     nugetUrl: 'https://www.nuget.org/packages/TGHarker.Orleans.Search',
+    docsUrl: 'https://orleans-search.tylerharker.com',
     blogLinks: [
       {
         url: '/blog/building-orleans-search-library',
