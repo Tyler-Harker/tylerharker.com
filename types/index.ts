@@ -23,6 +23,13 @@ export interface ClientProject {
   technologies: string[];
 }
 
+export interface Position {
+  role: string;
+  startDate: string;
+  endDate?: string;
+  description?: string;
+}
+
 export interface Experience {
   id: string;
   company: string;
@@ -33,6 +40,7 @@ export interface Experience {
   description: string;
   achievements: string[];
   technologies: string[];
+  positions?: Position[];
   projects?: ClientProject[];
 }
 
@@ -49,4 +57,14 @@ export interface Profile {
 export interface NavLink {
   href: string;
   label: string;
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  description: string;
+  content: string;
+  publishedAt: string;
+  tags: string[];
+  featured: boolean;
 }

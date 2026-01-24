@@ -2,18 +2,32 @@ import { Experience } from '@/types';
 
 export const experiences: Experience[] = [
   {
-    id: 'techfabric-em',
+    id: 'techfabric',
     company: 'Techfabric LLC',
     companyUrl: 'https://www.techfabric.com',
     role: 'Engineering Manager',
-    startDate: '2024-02',
-    description: 'Promoted to Engineering Manager, leading technical teams and driving architectural decisions across client engagements.',
+    startDate: '2018-07',
+    description: 'Software consulting firm delivering enterprise solutions. Progressed from Senior Software Engineer leading individual teams to Engineering Manager focused on growing all teams at Techfabric and facilitating knowledge sharing around emerging technologies.',
     achievements: [],
     technologies: [],
+    positions: [
+      {
+        role: 'Engineering Manager',
+        startDate: '2024-02',
+        description: 'Leading engineering teams across multiple client engagements. Responsible for technical direction, architecture decisions, team mentorship, and delivery excellence.',
+      },
+      {
+        role: 'Senior Software Engineer',
+        startDate: '2018-07',
+        endDate: '2024-02',
+        description: 'Full-stack development and technical leadership on enterprise consulting projects. Designed scalable architectures, led development teams, and delivered mission-critical systems.',
+      },
+    ],
     projects: [
       {
         id: 'lexisnexis',
         client: 'LexisNexis',
+        clientUrl: 'https://www.lexisnexis.com/',
         role: 'Software Architect',
         startDate: '2025-09',
         endDate: '2026-01',
@@ -40,16 +54,19 @@ export const experiences: Experience[] = [
       {
         id: 'proper-site-services',
         client: 'Proper Site Services LLC',
+        clientUrl: 'https://propersiteservices.com/',
         role: 'AI/ML Engineer',
         startDate: '2025-07',
         endDate: '2025-08',
         description: 'Built AI-powered CMS for automated lead management and response.',
         achievements: [
           'Designed custom CMS using Semantic Kernel to intelligently manage and respond to incoming leads',
+          'Built Blazor WebAssembly dashboard for real-time lead monitoring and communication',
           'Implemented automated SMS and email response system for lead engagement',
         ],
         technologies: [
           'C#',
+          'Blazor WASM',
           'Semantic Kernel',
           'AI/ML',
         ],
@@ -74,22 +91,10 @@ export const experiences: Experience[] = [
           'AI/ML',
         ],
       },
-    ],
-  },
-  {
-    id: 'techfabric-sse',
-    company: 'Techfabric LLC',
-    companyUrl: 'https://www.techfabric.com',
-    role: 'Senior Software Engineer',
-    startDate: '2018-07',
-    endDate: '2024-02',
-    description: 'Delivered enterprise software solutions for multiple high-profile clients as a consulting engineer.',
-    achievements: [],
-    technologies: [],
-    projects: [
       {
         id: 'swbc',
         client: 'SWBC',
+        clientUrl: 'https://www.swbc.com/',
         role: 'Senior Software Engineer',
         startDate: '2022-09',
         description: 'Lead developer on enterprise identity platform for a financial services company serving the mortgage, auto, and finance industries.',
@@ -113,6 +118,7 @@ export const experiences: Experience[] = [
       {
         id: 'klwines',
         client: 'KLWines.com',
+        clientUrl: 'https://www.klwines.com/',
         role: 'Development Team Lead',
         startDate: '2018-07',
         endDate: '2022-09',
@@ -138,5 +144,19 @@ export const experiences: Experience[] = [
         ],
       },
     ],
+  },
+  {
+    id: 'leasehawk',
+    company: 'LeaseHawk',
+    companyUrl: 'https://www.leasehawk.com/',
+    role: 'Senior Software Engineer',
+    startDate: '2017-11',
+    endDate: '2018-05',
+    description: 'Developed company-critical applications for a proptech company specializing in AI-powered leasing solutions for the multifamily housing industry.',
+    achievements: [
+      'Built HawkEye, a commercial reporting and analytics tool providing actionable insights to property management customers',
+      'Developed CRM platform enabling multifamily property managers to streamline tenant communications and landlord-tenant interactions',
+    ],
+    technologies: ['C#', '.NET Core', 'Angular', 'SQL Server'],
   },
 ];

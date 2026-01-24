@@ -9,6 +9,7 @@ export const profile: Profile = {
 
 export const navLinks: NavLink[] = [
   { href: '/', label: 'About' },
-  { href: '/experience', label: 'Experience' },
+  { href: '/work-experience', label: 'Work Experience' },
   { href: '/projects', label: 'Projects' },
+  { href: '/blog', label: 'Technical Blog' },
 ];
