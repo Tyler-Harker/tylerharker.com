@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 
 export default function ExperiencePage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl">
+    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-16 lg:px-8">
+      <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-3xl md:text-4xl">
         Experience
       </h1>
-      <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
+      <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400 sm:mt-4 sm:text-lg">
         My professional journey and work history.
       </p>
 
-      <div className="mt-12 space-y-8">
+      <div className="mt-8 space-y-6 sm:mt-12 sm:space-y-8">
         {experiences.map((experience) => (
           <ExperienceCard key={experience.id} experience={experience} />
         ))}

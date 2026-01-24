@@ -11,15 +11,29 @@ export interface Project {
   featured: boolean;
 }
 
-export interface Experience {
+export interface ClientProject {
   id: string;
-  company: string;
+  client: string;
+  clientUrl?: string;
   role: string;
   startDate: string;
   endDate?: string;
   description: string;
   achievements: string[];
   technologies: string[];
+}
+
+export interface Experience {
+  id: string;
+  company: string;
+  companyUrl?: string;
+  role: string;
+  startDate: string;
+  endDate?: string;
+  description: string;
+  achievements: string[];
+  technologies: string[];
+  projects?: ClientProject[];
 }
 
 export interface Profile {

@@ -12,20 +12,20 @@ export default function ProjectsPage() {
   const otherProjects = projects.filter((p) => !p.featured);
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl">
+    <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-16 lg:px-8">
+      <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-3xl md:text-4xl">
         Projects
       </h1>
-      <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
+      <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400 sm:mt-4 sm:text-lg">
         Open source projects and personal work.
       </p>
 
       {featuredProjects.length > 0 && (
-        <section className="mt-12">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
+        <section className="mt-8 sm:mt-12">
+          <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 sm:text-xl">
             Featured Projects
           </h2>
-          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+          <div className="mt-4 grid gap-4 sm:mt-6 sm:gap-6 md:grid-cols-2">
             {featuredProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
@@ -34,11 +34,11 @@ export default function ProjectsPage() {
       )}
 
       {otherProjects.length > 0 && (
-        <section className="mt-12">
-          <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
+        <section className="mt-8 sm:mt-12">
+          <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 sm:text-xl">
             Other Projects
           </h2>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-4 grid gap-4 sm:mt-6 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {otherProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
