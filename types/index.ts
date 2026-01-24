@@ -1,3 +1,8 @@
+export interface BlogLink {
+  url: string;
+  title: string;
+}
+
 export interface Project {
   id: string;
   name: string;
@@ -7,8 +12,11 @@ export interface Project {
   features: string[];
   githubUrl: string;
   demoUrl?: string;
+  blogLinks?: BlogLink[];
+  nugetUrl?: string;
   image?: string;
   featured: boolean;
+  status?: 'active' | 'archived' | 'experimental';
 }
 
 export interface ClientProject {
