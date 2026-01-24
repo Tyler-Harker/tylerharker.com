@@ -20,6 +20,22 @@ export const metadata: Metadata = {
     template: "%s | Tyler Harker",
   },
   description: "Personal website of Tyler Harker - Software Engineer specializing in .NET, distributed systems, and cloud architecture.",
+  metadataBase: new URL('https://tylerharker.com'),
+  authors: [{ name: 'Tyler Harker' }],
+  creator: 'Tyler Harker',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'Tyler Harker',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    creator: '@TylerHarker93',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

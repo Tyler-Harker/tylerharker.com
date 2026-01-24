@@ -25,9 +25,30 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const url = `https://tylerharker.com/blog/${post.slug}`;
+
   return {
     title: post.title,
     description: post.description,
+    keywords: post.tags,
+    authors: [{ name: 'Tyler Harker' }],
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: 'article',
+      publishedTime: post.publishedAt,
+      authors: ['Tyler Harker'],
+      tags: post.tags,
+      url,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+    },
+    alternates: {
+      canonical: url,
+    },
   };
 }
 
@@ -48,8 +69,35 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.description,
+    author: {
+      '@type': 'Person',
+      name: 'Tyler Harker',
+      url: 'https://tylerharker.com',
+    },
+    datePublished: post.publishedAt,
+    publisher: {
+      '@type': 'Person',
+      name: 'Tyler Harker',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://tylerharker.com/blog/${post.slug}`,
+    },
+    keywords: post.tags.join(', '),
+  };
+
   return (
-    <div className="min-h-screen">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen">
       {/* Hero header */}
       <div className="border-b border-zinc-200 bg-gradient-to-b from-zinc-50 to-white dark:border-zinc-800 dark:from-zinc-900 dark:to-zinc-950">
         <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
@@ -152,5 +200,6 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
       </footer>
     </div>
+    </>
   );
 }
