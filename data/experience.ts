@@ -159,4 +159,41 @@ export const experiences: Experience[] = [
     ],
     technologies: ['C#', '.NET Core', 'Angular', 'SQL Server'],
   },
+  {
+    id: 'reztech',
+    company: 'Reztech LLC',
+    role: 'Software Engineer',
+    startDate: '2015-05',
+    endDate: '2017-11',
+    description: 'Software consulting firm based in Tempe, Arizona. Started as an intern and progressed to Software Engineer, working on client projects across various industries.',
+    achievements: [],
+    technologies: ['C#', '.NET', 'SQL Server'],
+    positions: [
+      {
+        role: 'Software Engineer',
+        startDate: '2015-09',
+        endDate: '2017-11',
+        description: 'Full-stack development on client consulting projects.',
+      },
+      {
+        role: 'Software Intern',
+        startDate: '2015-05',
+        endDate: '2015-09',
+        description: 'Learning enterprise software development practices while contributing to client projects.',
+      },
+    ],
+    projects: [
+      {
+        id: 'klwines-reztech',
+        client: 'KLWines.com',
+        clientUrl: 'https://www.klwines.com/',
+        role: 'Software Engineer',
+        startDate: '2015-09',
+        endDate: '2017-11',
+        description: 'Developed e-commerce platform features for a premier wine retailer.',
+        achievements: [],
+        technologies: ['C#', '.NET', 'SQL Server'],
+      },
+    ],
+  },
 ];
