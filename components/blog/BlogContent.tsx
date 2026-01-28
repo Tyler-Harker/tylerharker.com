@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { MermaidDiagram } from './MermaidDiagram';
@@ -193,31 +193,70 @@ function CodeBlock({ code, language }: { code: string; language?: string }) {
 // Floating sidebar TOC
 export function FloatingTOC({ items }: { items: TOCItem[] }) {
   const [activeId, setActiveId] = useState<string>('');
+  const activeRef = useRef<HTMLAnchorElement>(null);
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
+    const handleScroll = () => {
+      // Target point is 35% from the top of the viewport
+      const targetPoint = window.innerHeight * 0.35;
+
+      let closestId = '';
+      let closestDistance = Infinity;
+
+      items.forEach((item) => {
+        const element = document.getElementById(item.id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const distance = Math.abs(rect.top - targetPoint);
+
+          // Only consider headings that are above or at the target point
+          if (rect.top <= targetPoint + 100 && distance < closestDistance) {
+            closestDistance = distance;
+            closestId = item.id;
           }
-        });
-      },
-      { rootMargin: '-100px 0px -80% 0px' }
-    );
+        }
+      });
 
-    items.forEach((item) => {
-      const element = document.getElementById(item.id);
-      if (element) observer.observe(element);
-    });
+      // If no heading is above target, use the first one if we're near the top
+      if (!closestId && items.length > 0) {
+        const firstElement = document.getElementById(items[0].id);
+        if (firstElement && firstElement.getBoundingClientRect().top < window.innerHeight) {
+          closestId = items[0].id;
+        }
+      }
 
-    return () => observer.disconnect();
+      if (closestId) {
+        setActiveId(closestId);
+      }
+    };
+
+    // Initial check
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [items]);
+
+  // Scroll active item into view within the TOC
+  useEffect(() => {
+    if (activeRef.current && navRef.current) {
+      const nav = navRef.current;
+      const active = activeRef.current;
+      const navRect = nav.getBoundingClientRect();
+      const activeRect = active.getBoundingClientRect();
+
+      // Check if active item is outside the visible area of the nav
+      if (activeRect.top < navRect.top || activeRect.bottom > navRect.bottom) {
+        active.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+  }, [activeId]);
 
   if (items.length === 0) return null;
 
   return (
-    <nav className="hidden lg:block sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
+    <nav ref={navRef} className="hidden lg:block sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto scrollbar-thin">
       <h2 className="mb-4 text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
         On this page
       </h2>
@@ -225,6 +264,7 @@ export function FloatingTOC({ items }: { items: TOCItem[] }) {
         {items.map((item) => (
           <li key={item.id} className={item.level === 3 ? 'ml-3' : ''}>
             <a
+              ref={activeId === item.id ? activeRef : null}
               href={`#${item.id}`}
               className={`block text-sm leading-relaxed transition-all duration-200 ${
                 activeId === item.id
