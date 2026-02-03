@@ -45,6 +45,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script src="https://insights.harker.dev/sdk/insights.js" data-application="dead3cd57cea" insights-target></script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-white font-sans antialiased dark:bg-zinc-950`}
       >
