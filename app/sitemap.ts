@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next'
 import { blogPosts } from '@/data/blog'
 
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const blogEntries = blogPosts.map((post) => ({
     url: `https://tylerharker.com/blog/${post.slug}`,
